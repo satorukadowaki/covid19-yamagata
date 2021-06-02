@@ -60,6 +60,17 @@
 
 ### 庄内地方
 
+- [直近2週間] 庄内市町村別の感染報告
+
+![直近2週間庄内市町村別感染報告](./images/14days_shonai_patients_byday.png)
+
+- 上記グラフのテーブルビューとメモ
+
+![直近2週間庄内市町村別感染報告表](./images/14days_shonai_table_view.png)
+
+- [直近2週間] 庄内市町村別14日間移動合計
+
+![直近2週間庄内市町村別14日間移動合計](./images/14days_shonai_table_view.png)
 
 ### 参考的に出力したもの
 
