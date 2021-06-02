@@ -72,24 +72,37 @@
 
 ![直近2週間庄内市町村別14日間移動合計](./images/14days_rollingsum_patients_shonai_area.png)
 
-### その他参考的に出力したもの
+### その他参考的に出力しているもの
 
 #### 直近1ヶ月の地方別10日間移動平均
 
 - 7日よりも少し長い期間で確認したかったので作成
+
+![直近1ヶ月の地方別10日間移動平均](./images/10days_rollingsum_patients_1month.png)
 
 <details>
 <summary>直近2週間分だけのグラフはこちらに</summary>
 <img src="./images/10days_rollingsum_patients_2week.png"></img>
 </details>
 
-![直近1ヶ月の地方別10日間移動平均](./images/10days_rollingsum_patients_1month.png)
 
-#### 別途リンクのみ
+- [直近1週間] 地方別7日間移動合計
 
-- [直近1週間] 地方別7日間移動合計 - [here](./images/7days_rollingsum_1week.png)
-- [直近2週間] 庄内地方10万人あたりの感染者数 [here](./images/14days_per_population_shonai.png)
-- [直近2週間] 庄内市町村別10万人あたりの感染者数 [here](./images/14days_per_population_shonai_area.png)
+![直近1週間 地方別7日間移動合計](./images/7days_rollingsum_1week.png)
+
+- [直近2週間] 庄内地方10万人あたりの感染者数
+
+![直近2週間 庄内地方10万人あたりの感染者数](./images/14days_per_population_shonai.png)
+
+- [直近2週間] 庄内市町村別10万人あたりの感染者数
   - 酒田市が5/31以降表示されていないのは2週間以上感染者報告がないことを示す
-- [全期間] 感染者報告割合(地方別) - [here](./images/all_range_area.png)
-- [全期間] 感染者報告割合(年代別) - [here](./images/all_range_age.png)
+
+![直近2週間 庄内市町村別10万人あたりの感染者数](./images/14days_per_population_shonai_area.png)
+
+- [全期間] 感染者報告割合(地方別)
+
+![全期間 地方別感染者報告割合](./images/all_range_area.png)
+
+- [全期間] 感染者報告割合(年代別)
+
+![全期間年代別感染者報告割合](./images/all_range_age.png)
