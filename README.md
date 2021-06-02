@@ -1,6 +1,7 @@
 # COVID19-Yamagata
 
 - 山形県のオープンデータを使用して発表データのサマリーを公表しています。（随時）
+- 出力は現在のところ画像になっていますが、いずれ再利用可能な状態にしたい(希望)
 
 ## 1. 前口上
 
@@ -19,11 +20,32 @@
   - ソースコード: いずれ公開（汚すぎるのでリファクタ後)
   - 計算結果のデータ: pickle 形式でいずれ公開
 
-### 例外データ
+### 除外データ
 
 - データとして年代などの値がない(NULL)ものは対象外としている
-  - 具体的なデータは[こちら](./images/exclusion_data.png)
+  - 具体的な除外データは[こちら](./images/exclusion_data.png)
     - `no` カラム == 山形県が発表している発表番号
 
 ## 2. 出力結果
- 
+
+### [直近2週間] 感染者報告数 (山形県)
+
+![直近2週間の感染者報告数](./images/recent_2week_patients_bar.png)
+
+### [直近2週間] 感染者報告数 (山形県地域別)
+
+![直近2週間の感染者報告数_地域別](./images/14days_yamagata_patients_byday.png)
+
+### [直近2週間] 感染者報告割合(年代別)
+
+![直近2週間の感染者報告割合](./images/recent_2week_age_pie.png)
+
+### [直近2週間] 感染者報告割合(地域別)
+
+![直近2週間の感染者報告割合](./images/recent_2week_area_pie.png)
+
+
+
+![直近1週間の地方別10万人あたりの感染者数](./images/7days_per_population_1week.png)
+![直近1ヶ月の地方別7日間移動平均](./images/7days_rollingave_patients_1month.png)
+![直近1週間の地方別10日間移動平均](./images/7days_rollingsum_1week.png)
