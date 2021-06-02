@@ -72,12 +72,16 @@
 
 ![直近2週間庄内市町村別14日間移動合計](./images/14days_rollingsum_patients_shonai_area.png)
 
-### 参考的に出力したもの
+### その他参考的に出力したもの
 
 #### 直近1ヶ月の地方別10日間移動平均
 
 - 7日よりも少し長い期間で確認したかったので作成
-  - 直近2週間分だけのグラフは - [here](./images/10days_rollingsum_patients_2week.png)
+
+<details>
+<summary>直近2週間分だけのグラフはこちらに</summary>
+![直近2週間を抜粋]](./images/10days_rollingsum_patients_2week.png)
+</details>
 
 ![直近1ヶ月の地方別10日間移動平均](./images/10days_rollingsum_patients_1month.png)
 
