@@ -80,7 +80,7 @@
 
 <details>
 <summary>直近2週間分だけのグラフはこちらに</summary>
-![直近2週間を抜粋]](./images/10days_rollingsum_patients_2week.png)
+<img src="./images/10days_rollingsum_patients_2week.png"></img>
 </details>
 
 ![直近1ヶ月の地方別10日間移動平均](./images/10days_rollingsum_patients_1month.png)
