@@ -101,8 +101,8 @@
 
 - [全期間] 感染者報告割合(地方別)
 
-![全期間 地方別感染者報告割合](./images/all_range_area.png)
+![全期間 地方別感染者報告割合](./images/all_range_area_pie.png)
 
 - [全期間] 感染者報告割合(年代別)
 
-![全期間年代別感染者報告割合](./images/all_range_age.png)
+![全期間年代別感染者報告割合](./images/all_range_age_pie.png)
