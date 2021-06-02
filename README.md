@@ -70,7 +70,7 @@
 
 - [直近2週間] 庄内市町村別14日間移動合計
 
-![直近2週間庄内市町村別14日間移動合計](./images/14days_shonai_table_view.png)
+![直近2週間庄内市町村別14日間移動合計](./images/14days_rollingsum_patients_shonai_area.png)
 
 ### 参考的に出力したもの
 
