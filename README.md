@@ -71,11 +71,11 @@
 
 ### その他参考的に出力しているもの
 
-#### 直近1ヶ月の地方別10日間移動平均
+#### 直近1ヶ月の地方別10日間移動合計
 
 - 7日よりも少し長い期間で確認したかったので作成
 
-![直近1ヶ月の地方別10日間移動平均](./images/10days_rollingsum_patients_1month.png)
+![直近1ヶ月の地方別10日間移動合計](./images/10days_rollingsum_patients_1month.png)
 
 <details>
 <summary>直近2週間分だけのグラフはこちらに</summary>
