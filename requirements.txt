@@ -1,0 +1,8 @@
+pendulum
+pandas
+jupyter
+jupyter_nbextensions_configurator
+jupyter_contrib_nbextensions
+matplotlib
+openpyxl
+xlrd

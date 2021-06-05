@@ -1,0 +1,2 @@
+-c conda-forge ujson
+-c conda-forge pandas-profiling
