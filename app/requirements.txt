@@ -1,0 +1,12 @@
+pandas
+ujson
+fastapi
+uvicorn
+starlette
+pydantic
+aiofiles
+asyncio
+pandas-bokeh
+pendulum
+openpyxl
+xlrd
