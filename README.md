@@ -101,6 +101,10 @@
 
 ![直近2週間 庄内市町村別10万人あたりの感染者数](./images/14days_per_population_shonai_area.png)
 
+#### 前年との比較(7日間移動平均を100日分で比較)
+
+![昨年同時期の移動平均との比較](./images/7days_rollingave_patients_100days.png)
+
 - [全期間] 感染者報告割合(地方別)
 
 ![全期間 地方別感染者報告割合](./images/all_range_area_pie.png)
