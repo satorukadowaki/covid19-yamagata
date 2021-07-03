@@ -102,7 +102,7 @@
 
 ![直近2週間 庄内市町村別10万人あたりの感染者数](./images/14days_per_population_shonai_area.png)
 
-#### [直近30日] 検査数の時系列 (日別の検査数と検査数の移動平均)
+#### [直近30日] 検査数の時系列 (日別の検査数と検査数の7日間移動平均)
 
 ![直近30日 日別の検査数と移動平均](./images/7days_rollingave_with_tests_30days.png)
 
