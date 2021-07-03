@@ -32,11 +32,23 @@
 
 ## 2. 出力結果
 
-### [直近1ヶ月] 地方別7日間移動平均
+- Remarks (2021-07-03)
+  - 移動平均ではなく移動合計を最初に掲載するように変更しました。
+    - 感染者数が少ない場合により少なく見えてしまうため
 
-- プロットが飛んだり、移動平均が計算できない場合に描画されない問題を修正 (2021-06-05), 県内がゼロの場合の問題を修正 2021-06-13, 2021-06-26再修正)
+### 直近1ヶ月の地方別10日間移動合計
 
-![直近1ヶ月の地方別7日間移動平均](./images/7days_rollingave_patients_1month.png)
+![直近1ヶ月の地方別10日間移動合計](./images/10days_rollingsum_patients_1month.png)
+
+<details>
+<summary>直近2週間分だけのグラフはこちらに</summary>
+<img src="./images/10days_rollingsum_patients_2week.png"></img>
+</details>
+
+
+- [直近1週間] 地方別7日間移動合計
+
+![直近1週間 地方別7日間移動合計](./images/7days_rollingsum_1week.png)
 
 
 ### [直近2週間] 感染者報告数 (山形県)
@@ -47,6 +59,10 @@
 
 ![直近2週間の感染者報告数_地域別](./images/14days_yamagata_patients_byday.png)
 
+####  [直近1週間] 地方別10万人あたりの感染者数
+
+![直近1週間の地方別10万人あたりの感染者数](./images/7days_per_population_1week.png)
+
 ### [直近2週間] 感染者報告割合(年代別)
 
 ![直近2週間の感染者報告割合](./images/recent_2week_age_pie.png)
@@ -54,10 +70,6 @@
 ### [直近2週間] 感染者報告割合(地方別)
 
 ![直近2週間の感染者報告割合](./images/recent_2week_area_pie.png)
-
-####  [直近1週間] 地方別10万人あたりの感染者数
-
-![直近1週間の地方別10万人あたりの感染者数](./images/7days_per_population_1week.png)
 
 ### 庄内地方
 
@@ -76,21 +88,11 @@
 
 ### その他参考的に出力しているもの
 
-#### 直近1ヶ月の地方別10日間移動合計
+#### [直近1ヶ月] 地方別7日間移動平均
 
-- 7日よりも少し長い期間で確認したかったので作成
+- プロットが飛んだり、移動平均が計算できない場合に描画されない問題を修正 (2021-06-05), 県内がゼロの場合の問題を修正 2021-06-13, 2021-06-26再修正)
 
-![直近1ヶ月の地方別10日間移動合計](./images/10days_rollingsum_patients_1month.png)
-
-<details>
-<summary>直近2週間分だけのグラフはこちらに</summary>
-<img src="./images/10days_rollingsum_patients_2week.png"></img>
-</details>
-
-
-- [直近1週間] 地方別7日間移動合計
-
-![直近1週間 地方別7日間移動合計](./images/7days_rollingsum_1week.png)
+![直近1ヶ月の地方別7日間移動平均](./images/7days_rollingave_patients_1month.png)
 
 - [直近2週間] 庄内地方10万人あたりの感染者数
 
