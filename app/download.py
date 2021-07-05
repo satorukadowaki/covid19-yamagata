@@ -7,14 +7,15 @@ from urllib import request
 def main():
     domain = "https://www.pref.yamagata.jp"
     covid_files_path = [
-        "/documents/10045/060003_yamagata_covid19_patients_0620.csv",
-        "/documents/10045/060003_yamagata_covid19_test_people_0702.csv",
+        "/documents/10045/060003_yamagata_covid19_patients_0704.csv",
+        "/documents/10045/060003_yamagata_covid19_test_people_0705.csv",
     ]
     save_files_path = ["./master_data/csv/patients_org.csv", "./master_data/csv/tests_org.csv"]
 
     # -- download patients data
     for idx, path in enumerate(covid_files_path):
         url = domain + path
+        print(f"Downloading...{url}")
         file_data = request.urlopen(url).read()
         save_path = save_files_path[idx]
         save_path_utf8 = save_path.replace("_org", "")
