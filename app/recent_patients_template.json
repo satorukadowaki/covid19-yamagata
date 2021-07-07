@@ -1,0 +1,5 @@
+[
+    {"no": 2024, "patients_area": "天童市", "patients_age": "40代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
+    {"no": 2025, "patients_area": "山形市", "patients_age": "80代", "patients_sex": "女性", "infected_at": infected_at, "published_at": published_at},
+    {"no": 2026, "patients_area": "山形市", "patients_age": "60代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
+]
