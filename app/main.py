@@ -64,7 +64,7 @@ if __name__ == "__main__":
     df_ts_mogami = pd.DataFrame()  # 最上
     today = pendulum.now(tz="Asia/Tokyo")
     range_days = 10
-    for i in range(30, -1, -1):  #  30日のループ
+    for i in range(200, -1, -1):  #  30日のループ
         target = today.subtract(days=i)
         minus_1week = target.subtract(days=range_days).strftime("%Y-%m-%d")
         target_str = target.strftime("%Y-%m-%d")
@@ -188,12 +188,13 @@ if __name__ == "__main__":
     df_ts_10d_movesum[mogami_col_title] = df_ts_mogami["10日間の感染者数合計"].copy()
     okitama_col_title = f"置賜地方[人口{okitama_population}]"
     df_ts_10d_movesum[okitama_col_title] = df_ts_okitama["10日間の感染者数合計"].copy()
+    df_ts_10d_movesum["日付_disp"] = df_ts_10d_movesum["日付"].dt.strftime("%Y-%m-%d").copy()
     df_ts_10d_movesum = df_ts_10d_movesum.set_index("日付")
 
     movesum_line = df_ts_10d_movesum.plot_bokeh(
         kind="line",
         figsize=(800, 600),
-        title="[30days] 地方別感染者数10日間移動合計",
+        title="[200days] 地方別感染者数10日間移動合計",
         xlabel="日付",
         ylabel="感染者数",
         # yticks=[0, 100, 200, 300, 400],
@@ -205,11 +206,20 @@ if __name__ == "__main__":
         marker="circle",
         show_figure=False,
     )
+    movesum_10d_source = ColumnDataSource(df_ts_10d_movesum)
+    columns = [
+        TableColumn(field="日付_disp", title="日付"),
+        TableColumn(field=shonai_col_title, title=shonai_col_title),
+        TableColumn(field=murayama_col_title, title=murayama_col_title),
+        TableColumn(field=mogami_col_title, title=mogami_col_title),
+        TableColumn(field=okitama_col_title, title=okitama_col_title),
+    ]
 
+    movesum_table = DataTable(source=movesum_10d_source, columns=columns, width=300, height=600)
     pandas_bokeh.plot_grid(
         [
             [data_table, ignore_data_table],
-            [movesum_line, None],
+            [movesum_line, movesum_table],
         ],
         # plot_width=1000,
         toolbar_location="right",
