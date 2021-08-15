@@ -49,10 +49,9 @@
 <img src="./images/10days_rollingsum_patients_2week.png"></img>
 </details>
 
-<details>
-<summary>過去200日分の移動合計グラフはこちら</summary>
-<img src="./images/200days_rollingsum.png"></img>
-</details>
+#### 過去200日分の移動合計グラフはこちら
+
+![直近200日間の移動合計グラフ](./images/200days_rollingsum.png)
 
 
 ### [直近2週間] 感染者報告数 (山形県)
