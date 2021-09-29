@@ -1,15 +1,22 @@
 #!/usr/bin/env python
 
 import codecs
+import pendulum
 from urllib import request
 
 
 def main():
     domain = "https://www.pref.yamagata.jp"
+
+    now = pendulum.now(tz="Asia/Tokyo")
+    tst_sfx = now.strftime("%m%d")
+    pat_sfx = now.subtract(days=1).strftime("%m%d")
+
     covid_files_path = [
-        "/documents/10045/060003_yamagata_covid19_patients_0926.csv",
-        "/documents/10045/060003_yamagata_covid19_test_people_0927.csv",
+        f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv",
+        f"/documents/10045/060003_yamagata_covid19_test_people_{tst_sfx}.csv",
     ]
+    print(covid_files_path)
     save_files_path = ["./master_data/csv/patients_org.csv", "./master_data/csv/tests_org.csv"]
 
     # -- download patients data
