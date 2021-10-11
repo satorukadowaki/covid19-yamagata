@@ -24,6 +24,8 @@ def main():
 
     save_files_path = ["./master_data/csv/patients_org.csv", "./master_data/csv/tests_org.csv"]
 
+    is_dl_patient = False
+    is_dl_test = False
     # -- download patients data
     for idx, path in enumerate(covid_files_path):
         url = domain + path
@@ -35,8 +37,10 @@ def main():
             continue
         if "patients" in path:
             save_path = save_files_path[0]
+            is_dl_patient = True
         else:
             save_path = save_files_path[1]
+            is_dl_test = True
         save_path_utf8 = save_path.replace("_org", "")
         with open(save_path, "wb") as f:
             f.write(file_data)
@@ -47,7 +51,7 @@ def main():
                     f_out.write(row)
 
         # -- 患者のデータは取れたらやめる
-        if "patients" in path:
+        if is_dl_patient and is_dl_test:
             break
 
 
