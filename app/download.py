@@ -22,6 +22,12 @@ def main():
         pat_sfx = now.subtract(days=i).strftime("%m%d")
         covid_files_path.append(f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv")
 
+    for i in range(1, 10):
+        pat_sfx = now.subtract(days=i).strftime("%m%d")
+        covid_files_path.append(
+            f"/documents/10045/060003_yamagata_covid19_test_people_{pat_sfx}.csv"
+        )
+
     save_files_path = ["./master_data/csv/patients_org.csv", "./master_data/csv/tests_org.csv"]
 
     is_dl_patient = False
@@ -29,6 +35,10 @@ def main():
     # -- download patients data
     for idx, path in enumerate(covid_files_path):
         url = domain + path
+        if "patients" in url and is_dl_patient:
+            continue
+        if "test" in url and is_dl_test:
+            continue
         print(f"Downloading...{url}")
         try:
             file_data = request.urlopen(url).read()
