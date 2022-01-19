@@ -9,11 +9,12 @@ def main():
     domain = "https://www.pref.yamagata.jp"
 
     now = pendulum.now(tz="Asia/Tokyo")
-    tst_sfx = now.strftime("%m%d")
-    pat_sfx = now.subtract(days=1).strftime("%m%d")
+    tst_sfx = now.strftime("%y%m%d")
+    pat_sfx = now.subtract(days=1).strftime("%y%m%d")
 
     covid_files_path = [
-        f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv",
+        # f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv",
+        f"/documents/10045/060003_yamagata_covid19_patients_{tst_sfx}.csv",
         f"/documents/10045/060003_yamagata_covid19_test_people_{tst_sfx}.csv",
     ]
 
