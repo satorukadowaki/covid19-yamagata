@@ -64,7 +64,7 @@ if __name__ == "__main__":
     df_ts_mogami = pd.DataFrame()  # 最上
     today = pendulum.now(tz="Asia/Tokyo")
     range_days = 10
-    for i in range(200, -1, -1):  #  30日のループ
+    for i in range(400, -1, -1):  #  30日のループ
         target = today.subtract(days=i)
         minus_1week = target.subtract(days=range_days).strftime("%Y-%m-%d")
         target_str = target.strftime("%Y-%m-%d")
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     movesum_line = df_ts_10d_movesum.plot_bokeh(
         kind="line",
         figsize=(800, 600),
-        title="[200days] 地方別感染者数10日間移動合計",
+        title="[400days] 地方別感染者数10日間移動合計",
         xlabel="日付",
         ylabel="感染者数",
         # yticks=[0, 100, 200, 300, 400],

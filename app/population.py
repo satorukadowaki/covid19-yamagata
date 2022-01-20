@@ -10,7 +10,7 @@ from settings import SHONAI_CITIES, MURAYAMA_CITIES, MOGAMI_CITIES, OKITAMA_CITI
 
 
 def population_importer():
-    raw_df = pd.read_excel("./master_data/population/r30801.xlsx")
+    raw_df = pd.read_excel("./master_data/population/r31201.xlsx")
     df_pop = raw_df.iloc[16:, 62:]  # 固定位置でスライス
     columns = [
         "市町村名",
