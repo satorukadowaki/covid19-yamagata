@@ -19,12 +19,12 @@ def main():
     ]
 
     # -- 感染者数0だと過去に遡る必要があるので20日分くらい作っておく
-    for i in range(2, 20):
-        pat_sfx = now.subtract(days=i).strftime("%m%d")
+    for i in range(1, 20):
+        pat_sfx = now.subtract(days=i).strftime("%y%m%d")
         covid_files_path.append(f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv")
 
     for i in range(1, 10):
-        pat_sfx = now.subtract(days=i).strftime("%m%d")
+        pat_sfx = now.subtract(days=i).strftime("%y%m%d")
         covid_files_path.append(
             f"/documents/10045/060003_yamagata_covid19_test_people_{pat_sfx}.csv"
         )
