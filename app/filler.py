@@ -35,6 +35,8 @@ def filler():
     # -- init: 出力用CSVに合わせて初期値を用意しておく
     pref_code = "060003"
     pref_name = "山形県"
+    # publish_date = now.subtract(days=1).strftime("%Y/%-m/%-d")
+    # infected_date = now.subtract(days=2).strftime("%Y/%-m/%-d")  # today - 1day
     publish_date = now.strftime("%Y/%-m/%-d")
     infected_date = now.subtract(days=1).strftime("%Y/%-m/%-d")  # today - 1day
 
