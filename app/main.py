@@ -63,8 +63,8 @@ if __name__ == "__main__":
     df_ts_okitama = pd.DataFrame()  # 置賜用
     df_ts_mogami = pd.DataFrame()  # 最上
     today = pendulum.now(tz="Asia/Tokyo")
-    range_days = 10
-    for i in range(400, -1, -1):  #  30日のループ
+    range_days = 7
+    for i in range(300, -1, -1):  #  30日のループ
         target = today.subtract(days=i)
         minus_1week = target.subtract(days=range_days).strftime("%Y-%m-%d")
         target_str = target.strftime("%Y-%m-%d")
@@ -74,19 +74,19 @@ if __name__ == "__main__":
         ].copy()
         sr_sum = df_recent.patients_area.value_counts()
         df_sum = sr_sum.to_frame().reset_index()
-        df_sum.columns = ["市町村名", "10日間の感染者数合計"]
+        df_sum.columns = ["市町村名", "7日間の感染者数合計"]
         for area in ["庄内", "村山", "置賜", "最上"]:
             df_per10 = pd.merge(df_sum, df_pop_, on=["市町村名"], how="outer")
             # -- エリア設定
             if area == "庄内":
                 df_per10.loc[df_per10["市町村名"].isin(SHONAI_CITIES), "area"] = area
                 df_per10 = df_per10.dropna(how="any").reset_index(drop=True)
-                df_per10["10万人あたりの感染者数"] = round(df_per10["10日間の感染者数合計"] / df_per10["pop_per10"], 2)
+                df_per10["10万人あたりの感染者数"] = round(df_per10["7日間の感染者数合計"] / df_per10["pop_per10"], 2)
                 df_per10["日付"] = target_str
                 target_str = target_str.replace("2021-", "")
-                sum_shonai_infect = df_per10["10日間の感染者数合計"].sum()
+                sum_shonai_infect = df_per10["7日間の感染者数合計"].sum()
                 df_ts = df_ts.append(
-                    df_per10[["市町村名", "10日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
+                    df_per10[["市町村名", "7日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
                 )
 
                 df_ts_shonai = df_ts_shonai.append(
@@ -99,19 +99,19 @@ if __name__ == "__main__":
                             "10万人あたりの感染者数": round(
                                 sum_shonai_infect / (shonai_population / 100000), 2
                             ),
-                            "10日間の感染者数合計": sum_shonai_infect,
+                            "7日間の感染者数合計": sum_shonai_infect,
                         }
                     ]
                 )
             elif area == "村山":
                 df_per10.loc[df_per10["市町村名"].isin(MURAYAMA_CITIES), "area"] = area
                 df_per10 = df_per10.dropna(how="any").reset_index(drop=True)
-                df_per10["10万人あたりの感染者数"] = round(df_per10["10日間の感染者数合計"] / df_per10["pop_per10"], 2)
+                df_per10["10万人あたりの感染者数"] = round(df_per10["7日間の感染者数合計"] / df_per10["pop_per10"], 2)
                 df_per10["日付"] = target_str
                 target_str = target_str.replace("2021-", "")
-                sum_murayama_infect = df_per10["10日間の感染者数合計"].sum()
+                sum_murayama_infect = df_per10["7日間の感染者数合計"].sum()
                 df_ts = df_ts.append(
-                    df_per10[["市町村名", "10日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
+                    df_per10[["市町村名", "7日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
                 )
                 df_ts_murayama = df_ts_murayama.append(
                     [
@@ -121,19 +121,19 @@ if __name__ == "__main__":
                             "10万人あたりの感染者数": round(
                                 sum_murayama_infect / (murayama_population / 100000), 2
                             ),
-                            "10日間の感染者数合計": sum_murayama_infect,
+                            "7日間の感染者数合計": sum_murayama_infect,
                         }
                     ]
                 )
             elif area == "置賜":
                 df_per10.loc[df_per10["市町村名"].isin(OKITAMA_CITIES), "area"] = area
                 df_per10 = df_per10.dropna(how="any").reset_index(drop=True)
-                df_per10["10万人あたりの感染者数"] = round(df_per10["10日間の感染者数合計"] / df_per10["pop_per10"], 2)
+                df_per10["10万人あたりの感染者数"] = round(df_per10["7日間の感染者数合計"] / df_per10["pop_per10"], 2)
                 df_per10["日付"] = target_str
                 target_str = target_str.replace("2021-", "")
-                sum_okitama_infect = df_per10["10日間の感染者数合計"].sum()
+                sum_okitama_infect = df_per10["7日間の感染者数合計"].sum()
                 df_ts = df_ts.append(
-                    df_per10[["市町村名", "10日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
+                    df_per10[["市町村名", "7日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
                 )
                 target_str = target_str.replace("2021-", "")
                 df_ts_okitama = df_ts_okitama.append(
@@ -144,19 +144,19 @@ if __name__ == "__main__":
                             "10万人あたりの感染者数": round(
                                 sum_okitama_infect / (okitama_population / 100000), 2
                             ),
-                            "10日間の感染者数合計": sum_okitama_infect,
+                            "7日間の感染者数合計": sum_okitama_infect,
                         }
                     ]
                 )
             elif area == "最上":
                 df_per10.loc[df_per10["市町村名"].isin(MOGAMI_CITIES), "area"] = area
                 df_per10 = df_per10.dropna(how="any").reset_index(drop=True)
-                df_per10["10万人あたりの感染者数"] = round(df_per10["10日間の感染者数合計"] / df_per10["pop_per10"], 2)
+                df_per10["10万人あたりの感染者数"] = round(df_per10["7日間の感染者数合計"] / df_per10["pop_per10"], 2)
                 df_per10["日付"] = target_str
                 target_str = target_str.replace("2021-", "")
-                sum_mogami_infect = df_per10["10日間の感染者数合計"].sum()
+                sum_mogami_infect = df_per10["7日間の感染者数合計"].sum()
                 df_ts = df_ts.append(
-                    df_per10[["市町村名", "10日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
+                    df_per10[["市町村名", "7日間の感染者数合計", "人口", "area", "10万人あたりの感染者数", "日付"]]
                 )
                 df_ts_mogami = df_ts_mogami.append(
                     [
@@ -166,7 +166,7 @@ if __name__ == "__main__":
                             "10万人あたりの感染者数": round(
                                 sum_mogami_infect / (mogami_population / 100000), 2
                             ),
-                            "10日間の感染者数合計": sum_mogami_infect,
+                            "7日間の感染者数合計": sum_mogami_infect,
                         }
                     ]
                 )
@@ -181,20 +181,20 @@ if __name__ == "__main__":
     df_ts_10d_movesum["日付"] = df_ts_shonai["jstdate"].copy()
     # df_ts_10d_movesum["日付"] = df_ts_shonai["日付"].copy()
     shonai_col_title = f"庄内地方[人口{shonai_population}]"
-    df_ts_10d_movesum[shonai_col_title] = df_ts_shonai["10日間の感染者数合計"].copy()
+    df_ts_10d_movesum[shonai_col_title] = df_ts_shonai["7日間の感染者数合計"].copy()
     murayama_col_title = f"村山地方[人口{murayama_population}]"
-    df_ts_10d_movesum[murayama_col_title] = df_ts_murayama["10日間の感染者数合計"].copy()
+    df_ts_10d_movesum[murayama_col_title] = df_ts_murayama["7日間の感染者数合計"].copy()
     mogami_col_title = f"最上地方[人口{mogami_population}]"
-    df_ts_10d_movesum[mogami_col_title] = df_ts_mogami["10日間の感染者数合計"].copy()
+    df_ts_10d_movesum[mogami_col_title] = df_ts_mogami["7日間の感染者数合計"].copy()
     okitama_col_title = f"置賜地方[人口{okitama_population}]"
-    df_ts_10d_movesum[okitama_col_title] = df_ts_okitama["10日間の感染者数合計"].copy()
+    df_ts_10d_movesum[okitama_col_title] = df_ts_okitama["7日間の感染者数合計"].copy()
     df_ts_10d_movesum["日付_disp"] = df_ts_10d_movesum["日付"].dt.strftime("%Y-%m-%d").copy()
     df_ts_10d_movesum = df_ts_10d_movesum.set_index("日付")
 
     movesum_line = df_ts_10d_movesum.plot_bokeh(
         kind="line",
         figsize=(800, 600),
-        title="[400days] 地方別感染者数10日間移動合計",
+        title="[300days] 地方別感染者数10日間移動合計",
         xlabel="日付",
         ylabel="感染者数",
         # yticks=[0, 100, 200, 300, 400],

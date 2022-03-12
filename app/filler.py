@@ -9,7 +9,7 @@ from datetime import datetime
 
 
 def filler():
-    now = pendulum.now(tz="Asia/Tokyo")
+    now = pendulum.now(tz="Asia/Tokyo")  # JSTで取得
     excel_file = "./master_data/excel/yamagata_covid.xlsx"
     csv_file = "./master_data/csv/yamagata_patients.csv"
 

@@ -42,14 +42,14 @@ def importer():
     df_csv = df_csv.dropna(how="any")
 
     # -- 当日発表分の入力
-    published_at = "2021/06/19"
-    infected_at = "2021/06/18"
-    recent_published_datum = [
-        #     {"no": 2024, "patients_area": "天童市", "patients_age": "40代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
-        #     {"no": 2025, "patients_area": "山形市", "patients_age": "80代", "patients_sex": "女性", "infected_at": infected_at, "published_at": published_at},
-        #     {"no": 2026, "patients_area": "山形市", "patients_age": "60代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
-    ]
-    df_csv = df_csv.append(recent_published_datum).reset_index(drop=True)
+    # published_at = "2021/06/19"
+    # infected_at = "2021/06/18"
+    # recent_published_datum = [
+    #     #     {"no": 2024, "patients_area": "天童市", "patients_age": "40代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
+    #     #     {"no": 2025, "patients_area": "山形市", "patients_age": "80代", "patients_sex": "女性", "infected_at": infected_at, "published_at": published_at},
+    #     #     {"no": 2026, "patients_area": "山形市", "patients_age": "60代", "patients_sex": "男性", "infected_at": infected_at, "published_at": published_at},
+    # ]
+    # df_csv = df_csv.append(recent_published_datum).reset_index(drop=True)
 
     # -- 発表日と感染確認日を日付型に変換
     df_csv["published_at"] = pd.to_datetime(
