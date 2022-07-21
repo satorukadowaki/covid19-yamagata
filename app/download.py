@@ -14,7 +14,7 @@ def main():
 
     covid_files_path = [
         # f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv",
-        f"/documents/10045/060003_yamagata_covid19_patients_{tst_sfx}.csv",
+        f"/documents/10045/060003_yamagata_covid19_patients_{tst_sfx}kai.csv",
         f"/documents/10045/060003_yamagata_covid19_test_people_{tst_sfx}.csv",
     ]
 
