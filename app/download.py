@@ -14,7 +14,7 @@ def main():
 
     covid_files_path = [
         # f"/documents/10045/060003_yamagata_covid19_patients_{pat_sfx}.csv",
-        f"/documents/10045/060003_yamagata_covid19_patients_{tst_sfx}kai.csv",
+        f"/documents/10045/060003_yamagata_covid19_patients_{tst_sfx}.csv",
         f"/documents/10045/060003_yamagata_covid19_test_people_{tst_sfx}.csv",
     ]
 
@@ -40,11 +40,12 @@ def main():
             continue
         if "test" in url and is_dl_test:
             continue
-        print(f"Downloading...{url}")
+        # print(f"[Downloading]...{url}")
         try:
             file_data = request.urlopen(url).read()
+            print(f"[Download Succeeded]: {url}")
         except:
-            print(f"Download Failed:{url}")
+            print(f"[Download Failed]: {url}")
             continue
         if "patients" in path:
             save_path = save_files_path[0]
